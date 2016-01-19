@@ -1,7 +1,11 @@
 var express = require('express');
+
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('localhost:27017/ihme');
+var mongoUri = process.env.MONGOLAB_URI ||
+  process.env.MONGOHQ_URL ||
+  'localhost:27017/ihme';
+var db = monk(mongoUri);
 
 var app = express();
 
