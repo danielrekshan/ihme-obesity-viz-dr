@@ -90,18 +90,19 @@ function renderOnceLoaded(){
     document.getElementById("age_group").value = "20+ yrs, age-standardized";
     document.getElementById("metric").value = "obese";
     d3.select("#menu").classed("hidden", false);
-    lineChart.changeFunction()
+    d3.select("#loading").remove();
+    lineChart.changeFunction();
   } else {
-    waitForLoading()
+    waitForLoading();
   }
 }
 
 function waitForLoading(){
   setTimeout(function(){ 
-  renderOnceLoaded()
+  renderOnceLoaded();
   }, 500);
 }
-renderOnceLoaded()
+renderOnceLoaded();
 
 // render line chart
 var locations,
@@ -117,18 +118,18 @@ function render (options) {
     "&sex=" + options.sex +
     "&age_group=" + options.age_group.replace("+", "REPLACE") +
     "&metric=" + options.metric +
-    "&compare=true"
+    "&compare=true";
 
   d3.json(url, function (data) {
-    svg.selectAll("circle").remove()
+    svg.selectAll("circle").remove();
     locations = d3.nest()
       .key(function(d) {
-        return d.location_name
+        return d.location_name;
       })
       .entries(data);
     
-    x.domain(d3.extent(data, function(d) {return d.year}))
-    y.domain(d3.extent(data, function(d) {return d.mean}))
+    x.domain(d3.extent(data, function(d) {return d.year}));
+    y.domain(d3.extent(data, function(d) {return d.mean}));
 
     // if no axis exists, create one, otherwise update it
     if (svg.selectAll(".y.axis")[0].length < 1 ){

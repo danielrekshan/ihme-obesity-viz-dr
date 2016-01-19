@@ -9,6 +9,10 @@ h2 {
   text-align: center;
 }
 
+#loading {
+  text-align: center;
+}
+
 path { 
   stroke-width: 2;
   fill: none;
