@@ -1,0 +1,16 @@
+{
+  "name": "IHME Obesity Visualization",
+  "version": "1.0.0",
+  "description": "Sample d3 visualization for IHME",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Rekshan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3",
+    "mongodb": "^2.1.4",
+    "monk": "^1.0.1"
+  }
+}

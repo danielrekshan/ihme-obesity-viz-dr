@@ -1,0 +1,62 @@
+#chart, #heatmap {
+  width: 80%;
+  min-width: 650px;
+  margin: 0 auto;
+  margin-bottom: 25px;
+}
+
+h2 {
+  text-align: center;
+}
+
+path { 
+  stroke-width: 2;
+  fill: none;
+}
+
+.axis path, .axis line {
+  fill: none;
+  stroke: black;
+  shape-rendering: crispEdges;
+}
+
+.legendHighlight {
+  font-weight: bold;
+}
+
+.lineHighlight {
+  stroke-width: 6;
+}
+
+.selectedDot {
+  fill: white;
+  stroke: black;
+  stroke-width: 2px;
+}
+
+circle {
+  cursor: pointer;
+  fill: white;
+}
+
+div.tooltip { 
+  position: absolute;     
+  text-align: left;     
+  width: 180px;
+  height: 140px;         
+  padding: 2px;
+  font: 12px sans-serif;    
+  background: white; 
+  border: 1px solid gray;    
+  border-radius: 2px;     
+  pointer-events: none;     
+}
+
+#menu {
+  position: fixed;
+  bottom: 5px;
+}
+
+.hidden {
+  display:none;
+}
